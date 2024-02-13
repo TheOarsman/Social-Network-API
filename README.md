@@ -31,27 +31,27 @@ Utilizing localStorage, the dashboard ensures persistent data storage, maintaini
 
 ## User Story
 
-**AS A** traveler <br>
+**AS A** social media startup <br>
 
-**I WANT** to see the weather outlook for multiple cities <br>
+**I WANT** an API for my social network that uses a NoSQL database <br>
 
-**SO THAT** I can plan a trip accordingly
+**SO THAT** my website can handle large amounts of unstructured data
 
 ## Acceptance Criteria
 
-**GIVEN** a weather dashboard with form inputs
+**GIVEN** a social network API
 
-**WHEN** I search for a city <br>
-**THEN** I am presented with current and future conditions for that city and that city is added to the search history
+**WHEN** I enter the command to invoke the application <br>
+**THEN** my server is started and the Mongoose models are synced to the MongoDB database
 
-**WHEN** I view current weather conditions for that city <br>
-**THEN** I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
+**WHEN** I open API GET routes in Insomnia for users and thoughts <br>
+**THEN** the data for each of these routes is displayed in a formatted JSON
 
-**WHEN** I view future weather conditions for that city <br>
-**THEN** I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
+**WHEN** I test API POST, PUT, and DELETE routes in Insomnia <br>
+**THEN** I am able to successfully create, update, and delete users and thoughts in my database
 
-**WHEN** I click on a city in the search history <br>
-**THEN** I am again presented with current and future conditions for that city
+**WHEN** I test API POST and DELETE routes in Insomnia <br>
+**THEN** I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
 
 ## Installation
 
