@@ -8,9 +8,7 @@
 
 ## Description
 
-Developers, ever tasked with integrating third-party APIs, can now effortlessly access weather data for cities with this browser-based weather dashboard. Leveraging the [5 Day Weather Forecast](https://openweathermap.org/forecast5), this dashboard dynamically updates HTML and CSS, providing users with accurate and up-to-date weather information.
-
-Utilizing localStorage, the dashboard ensures persistent data storage, maintaining user preferences and settings across sessions.
+Filler to be changed later
 
 ## Table of Contents
 
@@ -103,10 +101,10 @@ None currently
 
 **Developer:** Heinz Ulrich V
 
-[![Gmail](assets/images/GMAIL.png)](mailto:heinzulrichv@gmail.com)<br>
+[![Gmail](assets/images/badges/GMAIL.png)](mailto:heinzulrichv@gmail.com)<br>
 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://www.github.com/TheOarsman)<br>
 
-[![YouTube](assets/images/YouTube.png)](https://www.youtube.com/@theoarsman4581)<br>
+[![YouTube](assets/images/badges/YouTube.png)](https://www.youtube.com/@theoarsman4581)<br>
 
-[![LinkedIn](assets/images/LinkedIn.png)](https://www.linkedin.com/in/heinz-ulrich-v-3a3486a0/)
+[![LinkedIn](assets/images/badges/LinkedIn.png)](https://www.linkedin.com/in/heinz-ulrich-v-3a3486a0/)
