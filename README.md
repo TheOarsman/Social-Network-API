@@ -61,6 +61,12 @@ Filler to be changed later
 
 ![Javascript](https://img.shields.io/badge/-JavaScript-f7df1e?style=for-the-badge&logo=javascript&logoColor=black)
 
+![Insomnia](assets/images/badges/Insomnia.png)
+
+![MongoDB](assets/images/badges/mongoDB.png)
+
+![Express.JS](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+
 ## License
 
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
@@ -101,10 +107,10 @@ None currently
 
 **Developer:** Heinz Ulrich V
 
-[![Gmail](assets/images/badges/GMAIL.png)](mailto:heinzulrichv@gmail.com)<br>
-
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://www.github.com/TheOarsman)<br>
+[![LinkedIn](assets/images/badges/LinkedIn.png)](https://www.linkedin.com/in/heinz-ulrich-v-3a3486a0/)
 
 [![YouTube](assets/images/badges/YouTube.png)](https://www.youtube.com/@theoarsman4581)<br>
 
-[![LinkedIn](assets/images/badges/LinkedIn.png)](https://www.linkedin.com/in/heinz-ulrich-v-3a3486a0/)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://www.github.com/TheOarsman)<br>
+
+[![Gmail](assets/images/badges/GMAIL.png)](mailto:heinzulrichv@gmail.com)<br>
