@@ -1,5 +1,6 @@
-const mongoose = require("mongoose");
+// reaction.js
 
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const reactionSchema = new Schema({
@@ -15,8 +16,7 @@ const reactionSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now,
-    get: (timestamp) => dateFormat(timestamp),
   },
 });
 
-module.exports = reactionSchema;
+module.exports = mongoose.model("Reaction", reactionSchema);

@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
+const Reaction = require("./reaction"); // Import the Reaction model
 
 const { Schema } = mongoose;
 
@@ -22,7 +23,7 @@ const thoughtSchema = new Schema({
   reactions: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Reaction",
+      ref: "Reaction", // Reference the Reaction model
     },
   ],
 });
