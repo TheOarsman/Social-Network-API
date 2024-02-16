@@ -33,6 +33,7 @@ const reaction = [
   {
     reactionText: "",
     username: "",
+    thoughtID: "",
   },
 ];
 
