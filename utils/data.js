@@ -31,9 +31,8 @@ const thoughts = [
 
 const reaction = [
   {
-    reactionText: "",
+    reactionBody: "",
     username: "",
-    thoughtID: "",
   },
 ];
 
