@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
-const Reaction = require("./reaction"); // Import the Reaction model
 
 const { Schema } = mongoose;
 

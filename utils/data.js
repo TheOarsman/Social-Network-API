@@ -91,4 +91,6 @@ const thoughts = [
   },
 ];
 
-module.exports = { users, thoughts };
+const reaction = [];
+
+module.exports = { users, thoughts, reaction };
