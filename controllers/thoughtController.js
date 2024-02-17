@@ -1,4 +1,4 @@
-const { Thought, User } = require("../models");
+const { Thought, User, Reaction } = require("../models");
 
 const thoughtController = {
   // Get all thoughts
@@ -104,11 +104,22 @@ const thoughtController = {
 
   // Create a reaction stored in a single thought's reactions array field
   addReaction({ params, body }, res) {
-    Thought.findOneAndUpdate(
-      { _id: params.thoughtId },
-      { $push: { reactions: body } },
-      { new: true, runValidators: true }
-    )
+    // Extract necessary fields from the request body
+    const { reactionBody, username } = body;
+
+    // Create a new reaction with the extracted fields
+    Reaction.create({ reactionBody, username })
+      .then((newReaction) => {
+        // Once the reaction is created, obtain its _id
+        const reactionId = newReaction._id;
+
+        // Update the associated thought with the new reaction _id
+        return Thought.findOneAndUpdate(
+          { _id: params.thoughtId },
+          { $push: { reactions: reactionId } },
+          { new: true, runValidators: true }
+        );
+      })
       .then((dbThoughtData) => {
         if (!dbThoughtData) {
           res.status(404).json({ message: "No thought found with this id!" });
