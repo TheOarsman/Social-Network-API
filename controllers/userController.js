@@ -63,7 +63,7 @@ const userController = {
           return;
         }
         // Remove a user's associated thoughts when deleted
-        // return Thought.deleteMany({ _id: { $in: dbUserData.thoughts } });
+        return Thought.deleteMany({ _id: { $in: dbUserData.thoughts } });
         res.json(dbUserData);
       })
       .catch((err) => res.status(400).json(err));

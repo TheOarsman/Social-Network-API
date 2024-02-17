@@ -124,16 +124,25 @@ const thoughtController = {
 
   // Pull and remove a reaction by the reaction's reactionId value
   removeReaction({ params }, res) {
+    const { thoughtId, reactionId } = params;
+
+    if (!thoughtId || !reactionId) {
+      return res
+        .status(400)
+        .json({ message: "Both thoughtId and reactionId are required." });
+    }
+
     Thought.findOneAndUpdate(
-      { _id: params.thoughtId },
-      { $pull: { reactions: { _id: params.reactionId } } },
+      { _id: thoughtId },
+      { $pull: { reactions: reactionId } },
       { new: true }
     )
-
+      .populate("reactions") // Ensure reactions are populated if needed
       .then((dbThoughtData) => {
         if (!dbThoughtData) {
-          res.status(404).json({ message: "No thought found with this id!" });
-          return;
+          return res
+            .status(404)
+            .json({ message: "No thought found with this id!" });
         }
         res.json(dbThoughtData);
       })
