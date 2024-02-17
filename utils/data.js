@@ -29,11 +29,11 @@ const thoughts = [
   },
 ];
 
-const reaction = [
+const reactions = [
   {
-    reactionBody: "",
-    username: "",
+    reactionBody: "Test Reaction",
+    username: "syntaxSorcerer",
   },
 ];
 
-module.exports = { users, thoughts, reaction };
+module.exports = { users, thoughts, reactions };
