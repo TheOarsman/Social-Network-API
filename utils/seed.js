@@ -1,5 +1,5 @@
 const connection = require("../config/connection");
-const { user, thought, reaction } = require("../models");
+const { User, Thought, Reaction } = require("../models");
 const { users, thoughts, reactions } = require("./data");
 
 connection.on("error", (err) => err);
@@ -8,17 +8,17 @@ const seedDatabase = async () => {
   console.log("seeding database");
   try {
     console.log("deleting users & thoughts, and reactions");
-    await user.deleteMany({});
+    await User.deleteMany({});
     console.log("User Deleted");
-    await thought.deleteMany({});
+    await Thought.deleteMany({});
     console.log("Thoughts Deleted");
-    await reaction.deleteMany({});
+    await Reaction.deleteMany({});
     console.log("Reactions Deleted");
     console.log("insert users, thoughts, and reactions");
 
-    const createdUsers = await user.insertMany(users);
+    const createdUsers = await User.insertMany(users);
     console.log("new user created", createdUsers);
-    const createdThoughts = await thought.insertMany(thoughts);
+    const createdThoughts = await Thought.insertMany(thoughts);
     console.log("new thoughts created", createdThoughts);
 
     // Iterate over each thought and associate reactions
@@ -28,7 +28,7 @@ const seedDatabase = async () => {
         ...reaction,
         thoughts: thought._id,
       }));
-      await reaction.insertMany(reactionsForThought);
+      await Reaction.insertMany(reactionsForThought);
     }
 
     console.log("Database seeded successfully");

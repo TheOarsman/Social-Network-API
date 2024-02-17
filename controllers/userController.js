@@ -1,14 +1,16 @@
 const { User } = require("../models");
 
 const userController = {
-  getAllUsers: async (req, res) => {
-    try {
-      const users = await User.find(); // Ensure that User model is properly defined
-      res.json(users);
-    } catch (error) {
-      console.error("Error fetching users:", error);
-      res.status(500).json({ error: "Failed to fetch users" });
-    }
+  // Get all users
+  getAllUsers(req, res) {
+    User.find({})
+      .populate("thoughts")
+      .populate("friends")
+      .then((dbUserData) => res.json(dbUserData))
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
   },
 
   // Get a single user by its _id and populated thought and friend data
@@ -61,11 +63,8 @@ const userController = {
           return;
         }
         // Remove a user's associated thoughts when deleted
-        return Thought.deleteMany({ _id: { $in: dbUserData.thoughts } }).then(
-          () => {
-            res.json(dbUserData);
-          }
-        );
+        // return Thought.deleteMany({ _id: { $in: dbUserData.thoughts } });
+        res.json(dbUserData);
       })
       .catch((err) => res.status(400).json(err));
   },

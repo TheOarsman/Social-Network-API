@@ -1,29 +1,22 @@
-const { Schema, model } = require("mongoose");
+// reaction.js
 
-const reactionSchema = new Schema(
-  {
-    reactionBody: {
-      type: String,
-      required: true,
-      maxlength: 280,
-    },
-    username: {
-      type: String,
-      required: true,
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-    },
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
+
+const reactionSchema = new Schema({
+  reactionBody: {
+    type: String,
+    required: true,
+    maxlength: 280,
   },
-  {
-    toJSON: {
-      getters: true,
-    },
-    id: false,
-  }
-);
+  username: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
 
-const Reaction = model("Reaction", reactionSchema); // Changed variable name to Reaction
-
-module.exports = Reaction; // Export the model
+module.exports = mongoose.model("Reaction", reactionSchema);
