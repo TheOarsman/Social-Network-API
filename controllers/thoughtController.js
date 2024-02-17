@@ -104,19 +104,11 @@ const thoughtController = {
 
   // Create a reaction stored in a single thought's reactions array field
   addReaction({ params, body }, res) {
-    // Extract necessary fields from the request body
-    const { reactionBody, username } = body;
-
-    // Create a new reaction with the extracted fields
-    Reaction.create({ reactionBody, username })
-      .then((newReaction) => {
-        // Once the reaction is created, obtain its _id
-        const reactionId = newReaction._id;
-
-        // Update the associated thought with the new reaction _id
+    Reaction.create(body)
+      .then(({ _id }) => {
         return Thought.findOneAndUpdate(
           { _id: params.thoughtId },
-          { $push: { reactions: reactionId } },
+          { $push: { reactions: _id } },
           { new: true, runValidators: true }
         );
       })
