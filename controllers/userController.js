@@ -1,16 +1,14 @@
 const { User } = require("../models");
 
 const userController = {
-  // Get all users
-  getAllUsers(req, res) {
-    User.find({})
-      .populate("thoughts")
-      .populate("friends")
-      .then((dbUserData) => res.json(dbUserData))
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-      });
+  getAllUsers: async (req, res) => {
+    try {
+      const users = await User.find(); // Ensure that User model is properly defined
+      res.json(users);
+    } catch (error) {
+      console.error("Error fetching users:", error);
+      res.status(500).json({ error: "Failed to fetch users" });
+    }
   },
 
   // Get a single user by its _id and populated thought and friend data
