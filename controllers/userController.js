@@ -62,12 +62,11 @@ const userController = {
     User.findOneAndDelete({ _id: params.id })
       .then((dbUserData) => {
         if (!dbUserData) {
-          res.status(404).json({ message: "No user found with this id!" });
-          return;
+          return res
+            .status(404)
+            .json({ message: "No user found with this id!" });
         }
-        // Remove a user's associated thoughts when deleted
-        return Thought.deleteMany({ _id: { $in: dbUserData.thoughts } });
-        res.json(dbUserData);
+        return res.json(dbUserData);
       })
       .catch((err) => res.status(400).json(err));
   },
