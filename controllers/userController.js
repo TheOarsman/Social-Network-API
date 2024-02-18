@@ -4,7 +4,10 @@ const userController = {
   // Get all users
   getAllUsers(req, res) {
     User.find({})
-      .populate("thoughts")
+      .populate({
+        path: "thoughts",
+        populate: { path: "reactions" }, // Deeply populate reactions within thoughts
+      })
       .populate("friends")
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => {

@@ -14,21 +14,25 @@ const seedDatabase = async () => {
     console.log("Thoughts Deleted");
     await Reaction.deleteMany({});
     console.log("Reactions Deleted");
-    console.log("insert users, thoughts, and reactions");
+    console.log("insert users");
 
+    // Insert users
     const createdUsers = await User.insertMany(users);
     console.log("new user created", createdUsers);
+
+    // Insert thoughts
     const createdThoughts = await Thought.insertMany(thoughts);
     console.log("new thoughts created", createdThoughts);
 
-    // Iterate over each thought and associate reactions
+    // Associate thoughts with users
+    // Associate thoughts with users
     for (let i = 0; i < createdThoughts.length; i++) {
       const thought = createdThoughts[i];
-      const reactionsForThought = reactions.map((reaction) => ({
-        ...reaction,
-        thoughts: thought._id,
-      }));
-      await Reaction.insertMany(reactionsForThought);
+      const user = createdUsers.find(
+        (user) => user.username === thought.username
+      );
+      user.thoughts.push(thought._id);
+      await user.save();
     }
 
     console.log("Database seeded successfully");
