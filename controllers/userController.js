@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User, Thought } = require("../models");
 
 const userController = {
   // Get all users
@@ -58,17 +58,24 @@ const userController = {
   },
 
   // Remove a user by its _id
-  deleteUser({ params }, res) {
-    User.findOneAndDelete({ _id: params.id })
-      .then((dbUserData) => {
-        if (!dbUserData) {
-          return res
-            .status(404)
-            .json({ message: "No user found with this id!" });
-        }
-        return res.json(dbUserData);
-      })
-      .catch((err) => res.status(400).json(err));
+  deleteUser: async function ({ params }, res) {
+    try {
+      const dbUserData = await User.findOneAndDelete({ _id: params.id });
+
+      if (!dbUserData) {
+        return res.status(404).json({ message: "No user found with this id!" });
+      }
+
+      // Delete all thoughts associated with the deleted user
+      await Thought.deleteMany({ _id: { $in: dbUserData.thoughts } });
+
+      return res.json(dbUserData);
+    } catch (error) {
+      console.error("Error deleting user:", error);
+      return res
+        .status(500)
+        .json({ message: "Error deleting user", error: error.message });
+    }
   },
 
   // Add a new friend to a user's friend list
