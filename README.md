@@ -2,17 +2,48 @@
 
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-[Placeholder](www.placeholder.com)<br>
+[GitHub: Social Network API](<[www.placeholder.com](https://github.com/TheOarsman/Social-Network-API)>)<br>
 
-[YouTube: Placeholder](https:placeholder.com)
+[YouTube: NoSQL - Social Network API Video Demonstration](<[https:placeholder.com](https://youtu.be/7Mlw5yssC3w)>)
 
 ## Description
 
-Filler to be changed later
+NoSQL: Social Network API application.
+
+View Users
+
+![View Users](<assets/images/Screenshot 2024-02-18 at 2.57.01 PM.png>)
+
+Add Thought
+
+![Add Thought](<assets/images/Screenshot 2024-02-18 at 2.57.24 PM.png>)
+
+Add Reaction
+
+![Add Reaction](<assets/images/Screenshot 2024-02-18 at 2.56.46 PM.png>)
+
+This API for a Social Network web application allows users to share thoughts, react to friends' thoughts, and manage friend lists. This app employs Express.js for routing and MongoDB for the database, with Mongoose ODM facilitating seamless interaction and schema-based modeling in Node.js.
+
+What this application can do:
+
+- View All Users
+- View user by \_id
+- Adding new user(s)
+- Updating user(s)
+- Adding friend(s) to Friends list
+- Removing friend(s) from Friends list
+- View all Thoughts (posts)
+- View Thought by \_id
+- Creating a Thought
+- Updating a Thought
+- Deleting a Thought
+- Reacting to (commenting on) a Thought
+- Deleting a Reaction
+- Deleting a User and seeing associated Thoughts deleted too
 
 ## Table of Contents
 
-- [Weather Dashboard](#weather-dashboard)<br>
+- [Social Network API](#social-network-api)<br>
 - [Description](#description)<br>
 - [Table of Contents](#tabel-of-contents)<br>
 - [User Story](#user-story)<br>
@@ -102,6 +133,8 @@ N/A
 None currently
 
 ## Resources
+
+N/A
 
 ## Questions/Contact
 
