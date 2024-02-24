@@ -2,9 +2,9 @@
 
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-[GitHub: Social Network API](<[www.placeholder.com](https://github.com/TheOarsman/Social-Network-API)>)<br>
+[GitHub: Social Network API](https://github.com/TheOarsman/Social-Network-API)<br>
 
-[YouTube: NoSQL - Social Network API Video Demonstration](<[https:placeholder.com](https://youtu.be/7Mlw5yssC3w)>)
+[YouTube: NoSQL - Social Network API Video Demonstration](https://youtu.be/7Mlw5yssC3w)
 
 ## Description
 
